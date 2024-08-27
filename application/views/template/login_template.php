@@ -4,11 +4,11 @@
         <form>
             <h1><?php echo get_phrase($page_title,1); ?></h1>
             <div class="input">
-                <input type="text" required />
+                <input type="email" name="mail" required />
                 <label><?php echo get_phrase('email',3); ?></label>
             </div>
             <div class="input box">
-                <input type="password" required  style="-webkit-text-security: circle;" />
+                <input type="password" name="password" required/>
                 <label><?php echo get_phrase('Password',3); ?></label>
                 <div class="forgot"><a href="<?php echo site_url('passwordnew')?>"><?php echo get_phrase('Forgot Password',3); ?>?</a></div>
             </div>
