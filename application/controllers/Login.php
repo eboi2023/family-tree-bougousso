@@ -58,7 +58,7 @@ public function __construct()
            		}
            	}
            	else {
-           		$this->data['errors'] = get_phrase('Email does not exists');
+           		$this->data['errors'] = get_phrase('Email does not exists',3);
 
            		// false case
 	            $this->data['page_title'] = 'login';
@@ -66,6 +66,7 @@ public function __construct()
            	}	
         }
         else {
+        	$this->data['errors'] = get_phrase('Email does not exists',3);
             // false case
             $this->data['page_title'] = 'login';
 			$this->render_primary('template/login_template.php', $this->data);
