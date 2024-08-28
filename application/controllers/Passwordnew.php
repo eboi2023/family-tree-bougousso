@@ -6,7 +6,7 @@ public function __construct()
 	{
 		parent::__construct();
 		$this->load->helper('date');
-		
+		$this->load->model('model_auth');
 		
 		
 
@@ -21,10 +21,20 @@ public function __construct()
 
 	public function envoie()
 	{		
-		$data = $this->input->post('email');
-		$encrypted =$this->encrpte_vamail($data);
-		echo base_url('/passwordnew/restor/?vue='.$encrypted);
-	}
+		
+		$email_exists = $this->model_auth->check_email($this->input->post('email'));
+		if($email_exists == TRUE) {
+			$data = $this->input->post('email');
+			$encrypted =$this->encrpte_vamail($data);
+			
+			$this->data['page_title'] = 'Error';
+			$this->render_printer('template/pageconfirme_template1', $this->data);
+		}else{
+			$this->data['page_title'] = 'Error';
+			$this->render_printer('template/pageconfirme_template2', $this->data);
+		}
+		
+	}/*echo base_url('/passwordnew/restor/?vue='.$encrypted);*/
 
 	public function restor()
 	{
