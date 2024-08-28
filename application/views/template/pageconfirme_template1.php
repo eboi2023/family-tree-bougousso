@@ -272,8 +272,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <body>
     <div id="container">
       <div id="success-box">
+        <!-- 
         <div class="dot"></div>
         <div class="dot two"></div>
+        -->
         <div class="face">
           <div class="eye"></div>
           <div class="eye right"></div>
@@ -282,16 +284,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="shadow scale"></div>
         <div class="message">
           <h1 class="alert">
-            <?php echo get_phrase('Error!',3); ?>Success!
+            <?php echo get_phrase('Success!',3); ?>
           </h1>
           <p>
-            <?php echo get_phrase('Error!',3); ?>yay, everything is working.
+            <?php echo get_phrase('yeah, the restore email just went out.',3); ?>
           </p>
         </div>
         <button class="button-box">
           <h1 class="green">
             <a href="<?php echo site_url('login')?>">
-              <?php echo get_phrase('Error!',3); ?>continue
+              <?php echo get_phrase('try to connect!',3); ?>
             </a>
           </h1>
         </button>

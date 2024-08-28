@@ -17,8 +17,59 @@ public function __construct()
 	
 	public function index()
 	{
-		$this->data['page_title'] = 'login';
-		$this->render_primary('template/login_template.php', $this->data);
+		$this->logged_kl_in();
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+
+        if ($this->form_validation->run() == TRUE) {
+           // true case
+           	$email_exists = $this->model_auth->check_email($this->input->post('email'));
+
+           	if($email_exists == TRUE) {
+           		$login = $this->model_auth->login($this->input->post('email'), $this->input->post('password'));
+
+           		if($login) {
+
+           			$logged_kl_in_sess = array(
+           				'id' => $login['id'],
+				        'username'  => $login['username'],
+				        'email'     => $login['email'],
+				        'prenom'     => $login['firstname'],
+				        'nom'     => $login['lastname'],
+				        'phone'     => $login['phone'],
+				        'photo'     => $login['photo'],
+				        'sexe'     => $login['gender'],
+				        'logged_kl_in' => TRUE
+					);
+
+					$this->session->set_userdata($logged_kl_in_sess);
+					if ($this->session->userdata('url')) {
+						redirect($this->session->userdata('url'), 'refresh');
+					} else {
+						redirect('dashboard', 'refresh');
+					}
+					
+           			
+           		}
+           		else {
+           			$this->data['errors'] = get_phrase('Incorrect username/password combination');
+           			$this->load->view('login', $this->data);
+           		}
+           	}
+           	else {
+           		$this->data['errors'] = get_phrase('Email does not exists');
+
+           		// false case
+	            $this->data['page_title'] = 'login';
+				$this->render_primary('template/login_template.php', $this->data);
+           	}	
+        }
+        else {
+            // false case
+            $this->data['page_title'] = 'login';
+			$this->render_primary('template/login_template.php', $this->data);
+        }
 		 
 	}
 
