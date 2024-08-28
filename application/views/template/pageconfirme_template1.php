@@ -31,8 +31,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         position: relative;
         margin: auto;
         overflow: hidden;
-        width: 700px;
-        height: 250px;
+        width: 100%;
+        height: 100%;
       }
 
       h1 {
@@ -60,7 +60,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       p {
         margin-top: -5px;
-        font-size: 0.5em;
+        font-size: 1em;
+        font-family: cursive;
         font-weight: 100;
         color: #5e5e5e;
         letter-spacing: 1px;
@@ -72,24 +73,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       #success-box {
         position: absolute;
-        width: 35%;
-        height: 100%;
-        left: 12%;
+        width: 25em;
+        height: 25em;
+        margin: 10% 0% 0em 35%;
         background: linear-gradient(to bottom right, #B0DB7D 40%, #99DBB4 100%);
         border-radius: 20px;
         box-shadow: 5px 5px 20px rgba(203, 205, 211, 0.1);
         perspective: 40px;
       }
 
-      #error-box {
-        position: absolute;
-        width: 35%;
-        height: 100%;
-        right: 12%;
-        background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
-        border-radius: 20px;
-        box-shadow: 5px 5px 20px rgba(203, 205, 211, 0.1);
-      }
+
 
       .dot {
         width: 8px;
@@ -267,21 +260,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         color: #EF8D9C;
         letter-spacing: 2px;
       }
-      footer a {
+       a {
         color: #B0DB7D;
         text-decoration: none;
       }
-      footer a:hover {
+       a:hover {
         color: #FFC39E;
       }
     </style>
   </head>
-
   <body>
     <div id="container">
-      <div id="success-box" >
-        <!-- <div class="dot"></div> <div class="dot two"></div> -->
-        <div class="face2">
+      <div id="success-box">
+        <div class="dot"></div>
+        <div class="dot two"></div>
+        <div class="face">
           <div class="eye"></div>
           <div class="eye right"></div>
           <div class="mouth happy"></div>
@@ -289,15 +282,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="shadow scale"></div>
         <div class="message">
           <h1 class="alert">
-            <?php echo get_phrase('Success!',3); ?>
+            <?php echo get_phrase('Error!',3); ?>Success!
           </h1>
           <p>
-            <?php echo get_phrase('yeah, the restore email just went out.',3); ?>
+            <?php echo get_phrase('Error!',3); ?>yay, everything is working.
           </p>
         </div>
-        <button class="button-box"><h1 class="red"><a href="<?php echo site_url('passwordnew')?>"><?php echo get_phrase('try login',3); ?></a></h1></button>
+        <button class="button-box">
+          <h1 class="green">
+            <a href="<?php echo site_url('login')?>">
+              <?php echo get_phrase('Error!',3); ?>continue
+            </a>
+          </h1>
+        </button>
       </div>
     </div>
   </body>
-
 </html>
