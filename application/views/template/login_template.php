@@ -5,11 +5,10 @@
         <?php 
           $attributes = array("class" => "",
                               "id" => "",
-                              "method"=> "get",
                               "name" => "");
           echo form_open("", $attributes);
         ?>
-            <?php if (empty($errors)) {?>
+            <?php if (isset($errors)!='') {?>
                 <div class="alert_wrapper active">
                     <div class="alert_backdrop"></div>
                     <div class="alert_inner ">
@@ -34,7 +33,7 @@
             <?php } ?>
             <h1><?php echo get_phrase($page_title,1); ?></h1>
             <div class="input">
-                <input type="email" name="mail" required />
+                <input type="email" name="email" required />
                 <label><?php echo get_phrase('email',3); ?></label>
             </div>
             <div class="input box">

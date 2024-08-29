@@ -53,8 +53,10 @@ public function __construct()
            			
            		}
            		else {
-           			$this->data['errors'] = get_phrase('Incorrect username/password combination');
-           			$this->load->view('login', $this->data);
+           			$this->data['errors'] = get_phrase('Incorrect username/password combination',3);
+           			// false case
+		            $this->data['page_title'] = 'login';
+					$this->render_primary('template/login_template.php', $this->data);
            		}
            	}
            	else {
@@ -66,7 +68,7 @@ public function __construct()
            	}	
         }
         else {
-        	$this->data['errors'] = get_phrase('Email does not exists',3);
+        	$this->data['errors'] = '';
             // false case
             $this->data['page_title'] = 'login';
 			$this->render_primary('template/login_template.php', $this->data);
