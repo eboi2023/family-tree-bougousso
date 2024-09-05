@@ -8,7 +8,7 @@
                               "name" => "");
           echo form_open("", $attributes);
         ?>
-            <?php if (isset($errors)!='') {?>
+            <?php if (isset($_SESSION['tracerrors'])!=false || isset($_SESSION['tracerrors'])!=null) {?>
                 <div class="alert_wrapper active">
                     <div class="alert_backdrop"></div>
                     <div class="alert_inner ">
@@ -21,7 +21,7 @@
                                 <p class="title"><span><?php echo get_phrase('Error',3); ?>:</span>
                                     <?php echo get_phrase('connected',3); ?>
                                 </p>
-                                <p class="sub"><?php echo $errors; ?>.</p>
+                                <p class="sub"><?php echo $_SESSION['tracerrors']; ?>.</p>
                             </div>
                             <div class="icon close">
                                 <i class="fas fa-times"></i>

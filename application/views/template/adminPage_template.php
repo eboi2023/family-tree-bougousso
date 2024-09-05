@@ -1,264 +1,305 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Top Navigation</title>
 
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition layout-top-nav">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <div class="container">
+      <a href="../../index3.html" class="navbar-brand">
+        <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">AdminLTE 3</span>
+      </a>
+
+      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="index3.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Dropdown</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="#" class="dropdown-item">Some action </a></li>
+              <li><a href="#" class="dropdown-item">Some other action</a></li>
+
+              <li class="dropdown-divider"></li>
+
+              <!-- Level two dropdown-->
+              <li class="dropdown-submenu dropdown-hover">
+                <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Hover for action</a>
+                <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
+                  <li>
+                    <a tabindex="-1" href="#" class="dropdown-item">level 2</a>
+                  </li>
+
+                  <!-- Level three dropdown-->
+                  <li class="dropdown-submenu">
+                    <a id="dropdownSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">level 2</a>
+                    <ul aria-labelledby="dropdownSubMenu3" class="dropdown-menu border-0 shadow">
+                      <li><a href="#" class="dropdown-item">3rd level</a></li>
+                      <li><a href="#" class="dropdown-item">3rd level</a></li>
+                    </ul>
+                  </li>
+                  <!-- End Level three -->
+
+                  <li><a href="#" class="dropdown-item">level 2</a></li>
+                  <li><a href="#" class="dropdown-item">level 2</a></li>
+                </ul>
+              </li>
+              <!-- End Level two -->
+            </ul>
+          </li>
+        </ul>
+
+        <!-- SEARCH FORM -->
+        <form class="form-inline ml-0 ml-md-3">
+          <div class="input-group input-group-sm">
+            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-navbar" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right navbar links -->
+      <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+        <!-- Messages Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="fas fa-comments"></i>
+            <span class="badge badge-danger navbar-badge">3</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <a href="#" class="dropdown-item">
+              <!-- Message Start -->
+              <div class="media">
+                <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    Brad Diesel
+                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">Call me whenever you can...</p>
+                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                </div>
+              </div>
+              <!-- Message End -->
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <!-- Message Start -->
+              <div class="media">
+                <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    John Pierce
+                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">I got your message bro</p>
+                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                </div>
+              </div>
+              <!-- Message End -->
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <!-- Message Start -->
+              <div class="media">
+                <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    Nora Silvester
+                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                  </h3>
+                  <p class="text-sm">The subject goes here</p>
+                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                </div>
+              </div>
+              <!-- Message End -->
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+          </div>
+        </li>
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-bell"></i>
+            <span class="badge badge-warning navbar-badge">15</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-header">15 Notifications</span>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-envelope mr-2"></i> 4 new messages
+              <span class="float-right text-muted text-sm">3 mins</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-users mr-2"></i> 8 friend requests
+              <span class="float-right text-muted text-sm">12 hours</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-file mr-2"></i> 3 new reports
+              <span class="float-right text-muted text-sm">2 days</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+            <i class="fas fa-th-large"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /.navbar -->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        <?php echo get_phrase('Dashboard'); ?>
-        <small><?php echo get_phrase('Control panel'); ?></small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="./"><i class="fa fa-dashboard"></i> <?php echo get_phrase('Home'); ?></a></li>
-        <li class="active"><?= $icon; ?> &nbsp;<?php echo get_phrase($lien); ?></li>
-      </ol>
-    </section>
+    <div class="content-header">
+      <div class="container">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0"> Top Navigation <small>Example 3.0</small></h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Layout</a></li>
+              <li class="breadcrumb-item active">Top Navigation</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
 
     <!-- Main content -->
-    <section class="content">
-      <!-- Small boxes (Stat box) -->
-
+    <div class="content">
+      <div class="container">
         <div class="row">
-          <!-- col caisse kiosque-->
-            <div class="col-lg-6 col-xs-12">
-                <!-- small box -->
-                <div class="small-box bg-orange-active color-palette">
-                    <div class="inner">
-                        <h3>
-                          33
-                        </h3>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
 
-                        <p><?php echo get_phrase('total En caisse du KIOSQUE'); ?></p>
-                    </div>
-                    <div class="icon">
-                        <i class="glyphicon glyphicon-knight" style="font-size: .8em;"></i>
-                    </div>
-                    <a href="<?php echo site_url('caisses/kiosque');?>" class="small-box-footer"><?php echo get_phrase('Plus d info'); ?> <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-          <!-- ./col-->
-          <!-- col caisse lavage-->
-            <div class="col-lg-6 col-xs-12">
-                <!-- small box -->
-                <div class="small-box bg-aqua-active color-palette">
-                    <div class="inner">
-                        <h3>
-                            33
-                        </h3>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's
+                  content.
+                </p>
 
-                        <p><?php echo get_phrase('total En caisse du LAVAGE'); ?></p>
-                    </div>
-                    <div class="icon">
-                        <i class="glyphicon glyphicon-bishop" style="font-size: .8em;"></i>
-                    </div>
-                    <a href="<?php echo site_url('caisses/lavage');?>" class="small-box-footer"><?php echo get_phrase('Plus d info'); ?> <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-          <!-- col externe gestionnaire-->
-            <div class="col-lg-12 col-xs-12">
-                <!-- small box -->
-                <div class="small-box bg-light-blue-active color-palette">
-                    <div class="inner">
-                        <h3>
-                            33
-                        </h3>
-
-                        <p><?php echo get_phrase('En caisse gestionnaire'); ?></p>
-                    </div>
-                    <div class="icon">
-                        <i class="fa fa-money"></i>
-                    </div>
-                    <a href="<?php echo site_url('caisses/gexterne');?>" class="small-box-footer"><?php echo get_phrase('Plus d info'); ?> <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-          <!-- ./col -->
-
-          <div class="col-md-12">
-          <div class="box">
-            <div class="box-header with-border">
-              <h3 class="box-title"><?php echo get_phrase('Rapport nombre de jour de travail'); ?></h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <a href="<?php echo site_url();?>dashboard/refresh"><i class="fa fa-refresh"></i>
-                </a>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
               </div>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div class="row">
-                <div class="col-md-8">
-                  <p class="text-center">
-                    <strong>3</strong>
-                  </p>
 
-                  <div class="chart">
-                    <!-- Sales Chart Canvas -->
-                    <canvas id="salesChart" style="height: 180px;"></canvas>
-                  </div>
-                  <!-- /.chart-responsive -->
-                </div>
-                <!-- /.col -->
-                <?php echo form_open('dashboard/repportintervaldate') ; ?>
-                <div class="col-md-4">
-                  <p class="text-center">
-                    <strong><?php echo get_phrase('seach'); ?></strong>
-                  </p>
+            <div class="card card-primary card-outline">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
 
-                  <div class="progress-group">
-                    <span class="progress-text"><?php echo get_phrase('the year'); ?></span>
-                    <div class="form-group">
-                      <select class="form-control" name="depart" id="depart" required="">
-                        <option value=""><?php echo get_phrase('selected'); ?></option>
-                        <?php
-                          for ($i=2019; $i <=date('Y'); $i++) { 
-                            
-                          ?>
-                            <option value="<?=$i;?>" <?php if ($i==$years) {
-                              echo"selected='' ";
-                            }?>><?=$i;?></option>
-                          <?php
-                          }
-                        ?>
-                      </select>
-                      
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <button type="reset" class="btn btn-success" data-dismiss="modal"><?php echo get_phrase('Fermer'); ?></button>
-                        <input type="submit" id="valider2" value="<?php echo get_phrase('enregistrer'); ?>" class="btn btn-success pull-right" name="envoi" />
-                  </div>
-                  <!-- /.progress-group -->
-                </div>
-                <?php echo form_close() ; ?>
-                <!-- /.col -->
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's
+                  content.
+                </p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
               </div>
-              <!-- /.row -->
-            </div>
-            
-            <!-- /.box-footer -->
+            </div><!-- /.card -->
           </div>
-          <!-- /.box -->
-        </div>
-            
-          
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title m-0">Featured</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title">Special title treatment</h6>
+
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h5 class="card-title m-0">Featured</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title">Special title treatment</h6>
+
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->
-      
-         <!-- TABLE: LATEST ORDERS -->
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title"><?php echo get_phrase('evolution des compteur'); ?></h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" title="<?php echo get_phrase('reduit ou voire'); ?>" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-              </div>
-            </div>
-            
-            <!-- /.box-body -->
-            <div class="box-footer clearfix">
-              <a href="<?php echo site_url('domino');?>" class="btn btn-sm btn-default btn-flat pull-right"><?php echo get_phrase('View All compteur'); ?></a>
-            </div>
-            <!-- /.box-footer -->
-          </div>
-        <!-- /.box -->
-        
-    </section>
+      </div><!-- /.container-fluid -->
+    </div>
     <!-- /.content -->
   </div>
-  <div class="modal modal-default fade" id="modal-view">
-    
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="float-right d-none d-sm-inline">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+  </footer>
 </div>
-  <script type="text/javascript">
-    $("#dashboardMainMenu").addClass('active');
-    $('.sparkbar').each(function () {
-      var $this = $(this);
-      $this.sparkline('html', {
-        type    : 'bar',
-        height  : $this.data('height') ? $this.data('height') : '30',
-        barColor: $this.data('color')
-      });
-    });
-    $(function () {
+<!-- ./wrapper -->
 
-      var salesChartCanvas = $('#salesChart').get(0).getContext('2d');
-      // This will get the first returned node in the jQuery collection.
-      var salesChart       = new Chart(salesChartCanvas);
+<!-- REQUIRED SCRIPTS -->
 
-      var salesChartData = {
-        labels  : [<?=$moiss;?>],
-        datasets: [
-          {
-            label               : 'LAVAGE',
-            fillColor           : 'rgba(156, 156, 153, 0.24)',
-            strokeColor         : 'rgb(210, 214, 222)',
-            pointColor          : 'rgb(210, 214, 222)',
-            pointStrokeColor    : '#c1c7d1',
-            pointHighlightFill  : '#fff',
-            pointHighlightStroke: 'rgb(220,220,220)',
-            data                : [<?php echo $actionlavage;?>]
-          },
-          {
-            label               : 'KIOSQUE',
-            fillColor           : 'rgba(156, 156, 153, 0.24)',
-            strokeColor         : 'rgba(60,141,188,0.8)',
-            pointColor          : '#3b8bba',
-            pointStrokeColor    : 'rgba(255,255,255,1)',
-            pointHighlightFill  : '#fff',
-            pointHighlightStroke: 'rgba(60,141,188,1)',
-            data                : [<?php echo $actionkiosque?>]
-          }
-        ]
-      };
-
-      var salesChartOptions = {
-        // Boolean - If we should show the scale at all
-        showScale               : true,
-        // Boolean - Whether grid lines are shown across the chart
-        scaleShowGridLines      : false,
-        // String - Colour of the grid lines
-        scaleGridLineColor      : 'rgba(0,0,0,.05)',
-        // Number - Width of the grid lines
-        scaleGridLineWidth      : 1,
-        // Boolean - Whether to show horizontal lines (except X axis)
-        scaleShowHorizontalLines: true,
-        // Boolean - Whether to show vertical lines (except Y axis)
-        scaleShowVerticalLines  : true,
-        // Boolean - Whether the line is curved between points
-        bezierCurve             : false,
-        // Number - Tension of the bezier curve between points
-        bezierCurveTension      : 0.5,
-        // Boolean - Whether to show a dot for each point
-        pointDot                : true,
-        // Number - Radius of each point dot in pixels
-        pointDotRadius          : 4,
-        // Number - Pixel width of point dot stroke
-        pointDotStrokeWidth     : 1,
-        // Number - amount extra to add to the radius to cater for hit detection outside the drawn point
-        pointHitDetectionRadius : 10,
-        // Boolean - Whether to show a stroke for datasets
-        datasetStroke           : true,
-        // Number - Pixel width of dataset stroke
-        datasetStrokeWidth      : 2,
-        // Boolean - Whether to fill the dataset with a color
-        datasetFill             : true,
-        // String - A legend template
-        legendTemplate          : '<ul class=\'<%=name.toLowerCase()%>-legend\'><% for (var i=0; i<datasets.length; i++){%><li><span style=\'background-color:<%=datasets[i].lineColor%>\'></span><%=datasets[i].label%></li><%}%></ul>',
-        // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-        maintainAspectRatio     : false,
-        // Boolean - whether to make the chart responsive to window resizing
-        responsive              : true
-      };
-
-      // Create the line chart
-      salesChart.Line(salesChartData, salesChartOptions);
-    });
-    function action_view(p){
-      document.getElementById('verifcode3').value = p;
-    }
-
-  </script>
-  
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+</body>
+</html>

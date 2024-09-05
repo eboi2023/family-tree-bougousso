@@ -143,11 +143,10 @@ class Admin_Controller extends MY_Controller
 		
 		$this->load->model('model_users');
 		$this->load->model('Personne_model');
-		$this->load->view('templates/header',$data);
-		$this->load->view('templates/header_menu',$data);
-		$this->load->view('templates/side_menubar',$data);
+		$this->load->view('skeleton/header',$data);
+		$this->load->view('skeleton/header_menu',$data);
 		$this->load->view($page, $data);
-		$this->load->view('templates/footer',$data);
+		$this->load->view('skeleton/footer',$data);
 	}
 	public function render_primary($page = null, $data = array())
 	{
@@ -158,7 +157,6 @@ class Admin_Controller extends MY_Controller
 		$this->load->view('skeleton/second_part',$data);
 		$this->load->view($page, $data);
 		$this->load->view('skeleton/third_part',$data);
-		$this->load->view('template/footer',$data);
 		$this->load->view('skeleton/fourth_part',$data);
 	}
 
