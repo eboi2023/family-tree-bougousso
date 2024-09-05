@@ -21,7 +21,7 @@
                                 <p class="title"><span><?php echo get_phrase('Error',3); ?>:</span>
                                     <?php echo get_phrase('connected',3); ?>
                                 </p>
-                                <p class="sub"><?php echo $_SESSION['tracerrors']; ?>.</p>
+                                <p class="sub"><?php echo get_phrase($_SESSION['tracerrors'],3); ?>.</p>
                             </div>
                             <div class="icon close">
                                 <i class="fas fa-times"></i>
@@ -33,11 +33,11 @@
             <?php } ?>
             <h1><?php echo get_phrase($page_title,1); ?></h1>
             <div class="input">
-                <input type="email" name="email" required />
+                <input type="email" name="email"  required autocomplete="given-email"/>
                 <label><?php echo get_phrase('email',3); ?></label>
             </div>
             <div class="input box">
-                <input type="password" name="password" required/>
+                <input type="password" name="password" required autocomplete="given-password"/>
                 <label><?php echo get_phrase('Password',3); ?></label>
                 <div class="forgot"><a href="<?php echo site_url('passwordnew')?>"><?php echo get_phrase('Forgot Password',3); ?>?</a></div>
             </div>

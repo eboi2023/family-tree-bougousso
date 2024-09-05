@@ -10,6 +10,7 @@
 	<?php }
 	if ($page_title == 'login' || $page_title == 'passwordnew') {?>
 		<link href="<?php echo base_url('assets/page/login/style.css') ?>" rel="stylesheet">
+		<link href="<?php echo base_url('assets/plugins/fontawesome-free/css/all.min.css') ?>" rel="stylesheet">
 		<style type="text/css">
 			.wrapper{
 			    position: absolute;
@@ -95,10 +96,7 @@
 			}
 			.alert_wrapper .alert_item .close{
 			    cursor: pointer;
-			    width: 2em;
-			    height: 2em;
-			    background: red;
-			    color: #ffffff;
+			    color: red;
 			}
 
 			.alert_item.alert_error .close:hover{
