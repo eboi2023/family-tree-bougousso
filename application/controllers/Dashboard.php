@@ -29,8 +29,13 @@ class Dashboard extends Admin_Controller
 	*/
 	public function index()
 	{
-		
+		$session_data = $this->session->userdata();
+		if($session_data['logged_kl_in'] == TRUE) {	
 			$this->render_template('template/adminPage_template.php', $this->data);
+		}else{
+			redirect('login', 'refresh');
+		
+		}
 	}
 	
 		
