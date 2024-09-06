@@ -31,59 +31,107 @@
     <div class="content">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+          <div class="col-lg-12">
+            <div id="tree"/>
 
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
-                </p>
+              <script>
+              let family = new ProduiTkss("#tree", {
+                  // options
+                  nodeBinding: {
+                      field_0: "name",
+                      field_1: "datenee",
+                      field_2: "village",
+                      img_0: 'photo'
+                  },
+                 
+                  nodes: [
+                        {
+                              id: 1,
+                              pids: [2],
+                              name: "eboi mokoua",
+                              datenee: "12/03/1960",
+                              village: "Ghana",
+                              gender: 'female',
+                              photo: "img/test.png"
+                          }, {
+                              id: 2,
+                              pids: [1,9],
+                              name: "bamba novanly",
+                              datenee: "12/03/1960",
+                              village: "Bougousso",
+                              gender: 'male',
+                              photo: "img/test.png"
+                          },  {
+                              id: 9,
+                              pids: [2],
+                              name: "KONE AWA",
+                              datenee: "12/03/1960",
+                              village: "Bougousso",
+                              gender: 'female',
+                              photo: "img/test.png"
+                          },  {
+                              id: 10,
+                              pids: [11],
+                              name: "KONE aya",
+                              datenee: "12/03/1960",
+                              village: "Bougousso",
+                              gender: 'female',
+                              photo: "img/test.png"
+                          },  {
+                              id: 11,
+                              pids: [10],
+                              name: "KONE SALIF",
+                              datenee: "12/03/1960",
+                              village: "Bougousso",
+                              gender: 'male',
+                              photo: "img/test.png"
+                          },  {
+                              id: 12,
+                              mid: 10,
+                              fid: 11,
+                              name: "bamba kassoum",
+                              datenee: "12/03/1960",
+                              village: "Bougousso",
+                              gender: 'male',
+                              photo: "img/test.png"
+                          },  {
+                              id: 3,
+                              pids: [4],
+                              mid: 2,
+                              fid: 1,
+                              name: "bamba kassoum",
+                              datenee: "12/03/1960",
+                              village: "Bougousso",
+                              gender: 'male',
+                              photo: "img/test.png"
+                          },  {
+                              id: 5,
+                              mid: 2,
+                              fid: 1,
+                              name: "bamba adama",
+                              datenee: "12/03/1960",
+                              village: "Bougousso",
+                              gender: 'male',
+                              photo: "img/test.png"
+                          }, {
+                              id: 6,
+                              mid: 2,
+                              fid: 1,
+                              name: "bamba AWA",
+                              gender: 'female',
+                              photo: "img/test.png"
+                          }, {
+                              id: 4,
+                              pids: [3],
+                              name: "kone aminata",
+                              gender: 'female',
+                              photo: "img/test.png"
+                          }
 
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div>
 
-            <div class="card card-primary card-outline">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
-                </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div><!-- /.card -->
-          </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="card-title m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h5 class="card-title m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
+                  ]
+              });
+              </script>
           </div>
           <!-- /.col-md-6 -->
         </div>

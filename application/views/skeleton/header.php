@@ -21,8 +21,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/fontawesome-free/css/all.min.css'); ?>">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/adminlte.min.css'); ?>">
-
-
+  <?php if ($page_title== "Dashboard") {?>
+    <script src="<?php echo base_url('assets/page/free/produitkss.js'); ?>"></script>
+    <link href="<?php echo base_url('assets/page/free/produitkss.css'); ?>" rel="stylesheet" />
+  <?php } ?>
 </head>
 <body class="layout-top-nav layout-footer-fixed layout-navbar-fixed accent-success text-sm">
       
