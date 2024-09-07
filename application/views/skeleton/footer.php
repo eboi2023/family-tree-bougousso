@@ -16,7 +16,59 @@
   </footer>
 </div>
 <!-- ./wrapper -->
-
+ <!-- notifications CSS
+    ============================================ -->
+    <link rel="stylesheet" href="<?php echo site_url('assets/');?>css/notifications/Lobibox.min.css">
+    <link rel="stylesheet" href="<?php echo site_url('assets/');?>css/notifications/notifications.css">
+    <script type="text/javascript">
+      $(document).ready(function() {
+        <?php if($this->session->flashdata('basicWarning') !== null){ ?> 
+          Lobibox.notify('warning', {
+            sound: true,
+            showClass: 'bounceIn',
+            hideClass: 'bounceOut',
+            msg: '<?php echo $this->session->flashdata('basicWarning'); ?>'
+          });
+        <?php }?> 
+        <?php if($this->session->flashdata('basicErreur') !== null){ ?> 
+          Lobibox.notify('error', {
+            sound: true,
+            showClass: 'bounceIn',
+            hideClass: 'bounceOut',
+            msg: '<?php echo $this->session->flashdata('basicErreur'); ?>'
+          });
+        <?php }?>  
+        <?php if($this->session->flashdata('basicSucces') !== null){ ?>
+          Lobibox.notify('success', {
+            sound: true,
+            showClass: 'bounceIn',
+            hideClass: 'bounceOut',
+            msg: '<?php echo $this->session->flashdata('basicSucces'); ?>'
+          });
+        <?php }?>
+        <?php if($this->session->flashdata('basicInfo') !== null){ ?>
+          Lobibox.notify('info', {
+            sound: true,
+            showClass: 'bounceIn',
+            hideClass: 'bounceOut',
+            msg: '<?php echo $this->session->flashdata('basicInfo'); ?>'
+          });
+        <?php }?>
+        <?php if($this->session->flashdata('basicDefault') !== null){ ?>
+          Lobibox.notify('default', {
+            sound: true,
+            showClass: 'bounceIn',
+            hideClass: 'bounceOut',
+            msg: '<?php echo $this->session->flashdata('basicDefault'); ?>'
+          });
+        <?php }?>
+      });
+    </script>
+    
+    <!-- notification JS
+        ============================================ -->
+    <script src="<?php echo site_url('assets/');?>js/notifications/Lobibox.js"></script>
+    <script src="<?php echo site_url('assets/');?>js/notifications/notification-active.js"></script>
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js'); ?>"></script>
@@ -41,23 +93,7 @@
 <script src="<?php echo base_url('assets/plugins/datatables-buttons/js/buttons.colVis.min.js'); ?>"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('assets/'); ?>dist/js/demo.js"></script>
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
+
  <?php } ?>
 
 
