@@ -9,6 +9,7 @@ class Langue extends Admin_Controller
 		$this->not_logged_kl_in();
 		$this->load->model('Langue_model');
 		$this->data['page_title'] = 'Listes languague';
+		$this->data['company_info'] = $this->model_company->getCompanyData(1);
 	}
 
 	/* 
@@ -27,7 +28,7 @@ class Langue extends Admin_Controller
 		$this->data['type_langue'] = $this->Langue_model->fechTypeLangueList();
 		$this->data['aff_langue'] = $this->Langue_model->aff_laguage_complet();
 		/*$this->data['info_tranlect'] = $this->translect();*/
-		$this->render_template('langue/index', $this->data);
+		$this->render_template('langue/index.php', $this->data);
 	}
 	public function update_langue()
 	{

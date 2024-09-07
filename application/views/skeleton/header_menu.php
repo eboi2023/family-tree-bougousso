@@ -2,7 +2,7 @@
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white  sidebar-mini">
     <div class="container">
       <a href="<?php echo base_url(''); ?>" class="navbar-brand">
         <img src="<?php echo base_url('uploads/').''.$company_info['logo']?>" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -14,16 +14,29 @@
 
       <div class="collapse navbar-collapse order-3" id="navbarCollapse">
         <!-- Left navbar links -->
-        <ul class="navbar-nav">
+        <ul id="bigfamilyNav" class="navbar-nav">
           <li class="nav-item">
-            <a href="index3.html" class="nav-link">my big family</a>
+            <a href="<?php echo site_url('my_big_family.html');?>" class="nav-link">
+              <?php echo get_phrase("my_big_family",4); ?>
+            </a>
           </li>
-          <li class="nav-item">
-            <a href="index3.html" class="nav-link">my little family</a>
+          <li id="littlefamilyNav" class="nav-item">
+            <a href="<?php echo site_url('my_little_family.html');?>" class="nav-link">
+              <?php echo get_phrase("my_little_family",4); ?>
+            </a>
           </li>
-          <li class="nav-item">
-            <a href="index3.html" class="nav-link">the family</a>
+          <li id="familyNav" class="nav-item">
+            <a href="<?php echo site_url('the_family.html');?>" class="nav-link">
+              <?php echo get_phrase("the_family",4); ?>
+            </a>
           </li>
+          <?php if($this->session->userdata('id')==1): ?>
+            <li id="languageNav"  class="nav-item">
+              <a href="<?php echo base_url('langue') ?>"  class="nav-link">
+                  <?php echo get_phrase('langue'); ?>
+              </a>
+            </li>
+          <?php endif; ?>
         </ul>
 
        
@@ -38,44 +51,43 @@
             <i class="fas fa-user"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-show dropdown-menu-right">
-            <a href="<?php echo site_url('users/profile/');?>" class="dropdown-item" title="Mon profil">
+            <a href="<?php echo site_url('users/profile/');?>" class="dropdown-item" title="<?php echo get_phrase("Mon_profil",4); ?>">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   <i class="fas fa-user-plus"> </i>
-                  profil
+                  <?php echo get_phrase("Mon_profil",4); ?>
                 </h3>
               </div>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="<?php echo site_url('users/modifier_mdp');?>" class="dropdown-item" title="Modifier son mot de passe">
+            <a href="<?php echo site_url('users/modifier_mdp');?>" class="dropdown-item" title="<?php echo get_phrase("update_password",4); ?>">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   <i class="fas fa-edit"> </i>
-                  MDP
+                  <?php echo get_phrase("update_password",4); ?>
                 </h3>
               </div>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item" data-widget="fullscreen" role="button" title="Agrandir le navigateur">
+            <a href="#" class="dropdown-item" data-widget="fullscreen" role="button" title="<?php echo get_phrase("Agrandir_le_navigateur",4); ?>">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   <i class="fas fa-expand-arrows-alt"> </i>
-                  ecran
+                  <?php echo get_phrase("ecran",4); ?>
                 </h3>
               </div>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="<?php echo site_url('auth/logout');?>" class="dropdown-item" title="Déconnexion">
+            <a href="<?php echo site_url('auth/logout');?>" class="dropdown-item" title="<?php echo get_phrase("click_of_deconneted",4); ?>">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   <i class="fas fa-undo"> </i>
-                  deconnection
+                  <?php echo get_phrase("deconneted",4); ?>
                 </h3>
               </div>
             </a>
 
-
-
+            
                 
                 
                 
@@ -86,3 +98,32 @@
     </div>
   </nav>
   <!-- /.navbar -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <?php 
+        if ($page_title== "Listes languague") {
+         
+      ?>
+
+  </section>
+      <div class="container">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0"> <?= get_phrase($lien,3); ?></h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="<?php echo site_url('');?>"><i class="fa fa-dashboard"></i> <?php echo get_phrase('Home'); ?></a></li>
+              <li class="breadcrumb-item"><a href="<?php echo site_url();?>/Dashboard"><i class="fa fa-home"></i>&nbsp;<?php echo get_phrase('Dashboard'); ?></a></li>
+              <li class="breadcrumb-item active"><?= $icon; ?>&nbsp;<?= get_phrase($lien); ?></li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+      <?php } ?>
+    </div>
+    <!-- /.content-header -->
