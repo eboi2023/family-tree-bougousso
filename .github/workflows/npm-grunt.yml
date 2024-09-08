@@ -1,0 +1,28 @@
+nom: NodeJS avec Grunt
+
+sur:
+ pousseur:
+ branches: [ "principal" ]
+ pull_request:
+ branches: [ "principal" ]
+
+emplois:
+ instrument:
+ courir: ubuntu-dernier
+
+ stratégie:
+ matrice:
+ version nœud: [18.x, 20.x, 22.x]
+
+ étapes:
+    - utilisations: actions/checkout@v4
+
+    - nom: Utilisez Node.js ${{ matrix.node-version }}
+ utilisations: actions/nœud de configuration@v4
+ avec:
+ version nœud: ${{ matrix.node-version }}
+
+    - nom: Construire
+ courir: |
+ installateur npm
+ grognement
