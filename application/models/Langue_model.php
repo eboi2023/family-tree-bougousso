@@ -33,6 +33,19 @@ class Langue_model extends CI_Model
       return $query->result_array();
     }
 
+    public function aff_laguage_completA($id = null)
+    {
+      if($id) {
+        $sql = "SELECT * FROM language where phrase_id = ?";
+        $query = $this->db->query($sql, array($id));
+        return $query->row_array();
+      }
+
+      $sql = "SELECT * FROM `language` WHERE `english` IS NULL OR `francais` IS NULL ORDER BY `phrase_id` ASC";
+      $query = $this->db->query($sql);
+      return $query->result_array();
+    }
+
     public function insertLangueList(){
 		$count = count($this->input->post('idvalue'));
     	for($x = 0; $x < $count; $x++) {
@@ -51,7 +64,7 @@ class Langue_model extends CI_Model
 
             $sql = "SELECT * FROM type_language where type_language = ?";
             $query = $this->db->query($sql, array($this->input->post('add_langue')));
-            if ($query->row_array() == 0) {
+            if ($query->num_rows() == 0) {
                 $data = array('type_language' => $this->input->post('add_langue') );
         		$insert = $this->db->insert('type_language', $data);
         		if ($insert==true) {
@@ -78,7 +91,8 @@ class Langue_model extends CI_Model
     	if ($this->input->post('action_option_emision')==2) {
             $sql = "SELECT * FROM type_language where type_language = ?";
             $query = $this->db->query($sql, array($this->input->post('langue')));
-            if ($query->row_array() == 1) {
+
+            if ($query->num_rows() == 1) {
         		$data = array('type_language' => $this->input->post('langue') );
         		$delete = $this->db->delete('type_language', $data);
         		if ($delete == true) {
