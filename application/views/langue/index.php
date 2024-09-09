@@ -109,7 +109,7 @@
                         <div class="form-group">
                           <label for="currency"><?php echo get_phrase('section action'); ?></label>
                           <?php ?>
-                          <select class="form-control" id="tttt" name="option_langue" onchange="selection_action()" required>
+                          <select class="form-control" id="currency" name="option_langue" onchange="selection_action()" required>
                             <option value="">~~SELECT~~</option>
                             <option value="1"><?php echo get_phrase('Add'); ?></option>
                             <option value="2"><?php echo get_phrase('Delecte'); ?></option>
@@ -134,7 +134,7 @@
     </div>
     <script type="text/javascript"> 
       function selection_action(){
-        var select = document.getElementById("tttt");
+        var select = document.getElementById("currency");
         var valeur = select.options[select.selectedIndex].value;
         if (valeur=="") {
           document.getElementById('type_valeur').innerHTML='';

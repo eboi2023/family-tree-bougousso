@@ -39,7 +39,6 @@
 <script src="<?php echo base_url('assets/plugins/datatables-buttons/js/buttons.colVis.min.js'); ?>"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('assets/dist/js/adminlte.min.js'); ?>"></script>
-<script src="<?php echo base_url('assets/dist/js/demo.js'); ?>"></script>
 <script>
   $(function () {
     $('#example2').DataTable({
@@ -151,6 +150,8 @@
   $(document).ready(function() {
     <?php if($this->session->flashdata('basicWarning') !== null){ ?> 
       Lobibox.notify('warning', {
+        soundPath: '<?php echo site_url('uploads/sounds/');?>',   // The folder path where sounds are located
+        soundExt: '.MP3',
         sound: true,
         showClass: 'bounceIn',
         hideClass: 'bounceOut',
@@ -159,6 +160,8 @@
     <?php }?> 
     <?php if($this->session->flashdata('basicErreur') !== null){ ?> 
       Lobibox.notify('error', {
+        soundPath: '<?php echo site_url('uploads/sounds/');?>',   // The folder path where sounds are located
+        soundExt: '.MP3',
         sound: true,
         showClass: 'bounceIn',
         hideClass: 'bounceOut',
@@ -167,6 +170,8 @@
     <?php }?>  
     <?php if($this->session->flashdata('basicSucces') !== null){ ?>
       Lobibox.notify('success', {
+        soundPath: '<?php echo site_url('uploads/sounds/');?>',   // The folder path where sounds are located
+        soundExt: '.MP3',
         sound: true,
         showClass: 'bounceIn',
         hideClass: 'bounceOut',
@@ -175,6 +180,8 @@
     <?php }?>
     <?php if($this->session->flashdata('basicInfo') !== null){ ?>
       Lobibox.notify('info', {
+        soundPath: '<?php echo site_url('uploads/sounds/');?>',   // The folder path where sounds are located
+        soundExt: '.MP3',
         sound: true,
         showClass: 'bounceIn',
         hideClass: 'bounceOut',
@@ -183,12 +190,15 @@
     <?php }?>
     <?php if($this->session->flashdata('basicDefault') !== null){ ?>
       Lobibox.notify('default', {
+        soundPath: '<?php echo site_url('uploads/sounds/');?>',   // The folder path where sounds are located
+        soundExt: '.MP3',
         sound: true,
         showClass: 'bounceIn',
         hideClass: 'bounceOut',
         msg: '<?php echo $this->session->flashdata('basicDefault'); ?>'
       });
     <?php }?>
+
   });
 </script>
 <!-- notification JS

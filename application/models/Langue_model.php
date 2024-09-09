@@ -63,7 +63,7 @@ class Langue_model extends CI_Model
                         $perm = array('optact' => 1,'verifval' => 0,'verifvaltab' => 0,'contract' => true );
                         return $perm;
                     }else{
-                        $perm = array('optact' => 1,'verifval' => 0,'verifvaltab' => 0,'contract' => false );
+                        $perm = array('optact' => 1,'verifval' => 0,'verifvaltab' => 1,'contract' => false );
                         return $perm;
                     }
         		}else{
@@ -71,24 +71,31 @@ class Langue_model extends CI_Model
                     return $perm;
                 }
             }else{
-                $perm = array('optact' => 1,'verifval' => 1,'verifvaltab' => null,'contract' => false );
+                $perm = array('optact' => 1,'verifval' => 1,'verifvaltab' => 1,'contract' => false );
                 return $perm;
             }
     	}
     	if ($this->input->post('action_option_emision')==2) {
-    		$data = array('type_language' => $this->input->post('langue') );
-    		$delete = $this->db->delete('type_language', $data);
-    		if ($delete == true) {
-				$query = $this->dbforge->drop_column('language', $this->input->post('langue'));
-	    		if ($query==true) {
-                    $perm = array('optact' => 2,'verifval' => 0,'verifvaltab' => 0,'contract' => true );
-                    return $perm;
-                }else{
+            $sql = "SELECT * FROM type_language where type_language = ?";
+            $query = $this->db->query($sql, array($this->input->post('langue')));
+            if ($query->row_array() == 1) {
+        		$data = array('type_language' => $this->input->post('langue') );
+        		$delete = $this->db->delete('type_language', $data);
+        		if ($delete == true) {
+    				$query = $this->dbforge->drop_column('language', $this->input->post('langue'));
+    	    		if ($query==true) {
+                        $perm = array('optact' => 2,'verifval' => 0,'verifvaltab' => 0,'contract' => true );
+                        return $perm;
+                    }else{
+                        $perm = array('optact' => 2,'verifval' => 0,'verifvaltab' => 0,'contract' => false );
+                        return $perm;
+                    }
+        		}else{
                     $perm = array('optact' => 2,'verifval' => 0,'verifvaltab' => 1,'contract' => false );
                     return $perm;
                 }
-    		}else{
-                $perm = array('optact' => 2,'verifval' => 1,'verifvaltab' => null,'contract' => false );
+            }else{
+                $perm = array('optact' => 2,'verifval' => 1,'verifvaltab' => 1,'contract' => false );
                 return $perm;
             }
     	}

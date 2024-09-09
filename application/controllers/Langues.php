@@ -54,15 +54,14 @@ class Langues extends Admin_Controller
             redirect('dashboard', 'refresh');
         }
         $tab=$this->Langue_model->Option_Langue();
-
         if ($tab['optact'] == 1) {
 	  		if ($tab['verifval'] == 0) {
 	  			if ($tab['verifvaltab'] == 0) {
-	  				if ($tab['verifvaltab'] == true) {
+	  				if ($tab['contract'] == true) {
 	  					$this->session->set_flashdata('basicInfo', get_phrase('Successfully_created',3));
 	  					redirect('langues', 'refresh');
 	  				}else{
-	  					if ($tab['verifvaltab'] == false) {
+	  					if ($tab['contract'] == false) {
 	  						$this->session->set_flashdata('basicErreur', get_phrase('transmision_error',3));
 			    			redirect('langues', 'refresh');
 	  					}else{
@@ -70,7 +69,7 @@ class Langues extends Admin_Controller
 				    		redirect('langues', 'refresh');
 	  					}
 	  				}
-	  			}else{contract
+	  			}else{
 	  				if ($tab['verifvaltab'] ==1) {
 	  					$this->session->set_flashdata('basicWarning', get_phrase('check_the_database',3));
 				    	redirect('langues', 'refresh');
@@ -93,11 +92,11 @@ class Langues extends Admin_Controller
 		  		
 	  		if ($tab['verifval'] == 0) {
 	  			if ($tab['verifvaltab'] == 0) {
-	  				if ($tab['verifvaltab'] == true) {
+	  				if ($tab['contract'] == true) {
 	  					$this->session->set_flashdata('basicInfo', get_phrase('Successfully_deleted',3));
 	  					redirect('langues', 'refresh');
 	  				}else{
-	  					if ($tab['verifvaltab'] == false) {
+	  					if ($tab['contract'] == false) {
 	  						$this->session->set_flashdata('basicErreur', get_phrase('transmision_error',3));
 			    			redirect('langues', 'refresh');
 	  					}else{
@@ -105,7 +104,7 @@ class Langues extends Admin_Controller
 				    		redirect('langues', 'refresh');
 	  					}
 	  				}
-	  			}else{contract
+	  			}else{
 	  				if ($tab['verifvaltab'] ==1) {
 	  					$this->session->set_flashdata('basicWarning', get_phrase('check_the_database',3));
 				    	redirect('langues', 'refresh');
@@ -116,7 +115,7 @@ class Langues extends Admin_Controller
 	  			}
 	  		}else{
 	  			if ($tab['verifval'] == 1) {
-		  			$this->session->set_flashdata('basicWarning', get_phrase('the_language_already_exists',3));
+		  			$this->session->set_flashdata('basicWarning', get_phrase('the_language_already_non_exists',3));
 		    		redirect('langues', 'refresh');
 		  		}else{
 		  			$this->session->set_flashdata('basicErreur', get_phrase('transmision_error',3));
