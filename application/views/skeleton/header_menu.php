@@ -32,7 +32,7 @@
           </li>
           <?php if($this->session->userdata('id')==1): ?>
             <li id="languageNav"  class="nav-item">
-              <a href="<?php echo base_url('langue') ?>"  class="nav-link">
+              <a href="<?php echo base_url('langues') ?>"  class="nav-link">
                   <?php echo get_phrase('langue'); ?>
               </a>
             </li>

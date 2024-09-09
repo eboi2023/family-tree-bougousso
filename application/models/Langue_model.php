@@ -48,23 +48,49 @@ class Langue_model extends CI_Model
     public function Option_Langue(){
     	$this->load->dbforge();
     	if ($this->input->post('action_option_emision')==1) {
-    		$data = array('type_language' => $this->input->post('add_langue') );
-    		$insert = $this->db->insert('type_language', $data);
-    		if ($insert==true) {
-    			$fields = array(
-	        		$this->input->post('add_langue') => array('type' => 'LONGTEXT','null' => FALSE)
-				);
-				$query = $this->dbforge->add_column('language', $fields);
-	    		return ($query == true) ? true : false;
-    		}
+
+            $sql = "SELECT * FROM type_language where type_language = ?";
+            $query = $this->db->query($sql, array($this->input->post('add_langue')));
+            if ($query->row_array() == 0) {
+                $data = array('type_language' => $this->input->post('add_langue') );
+        		$insert = $this->db->insert('type_language', $data);
+        		if ($insert==true) {
+        			$fields = array(
+    	        		$this->input->post('add_langue') => array('type' => 'LONGTEXT','null' => FALSE)
+    				);
+    				$query = $this->dbforge->add_column('language', $fields);
+                    if ($query==true) {
+                        $perm = array('optact' => 1,'verifval' => 0,'verifvaltab' => 0,'contract' => true );
+                        return $perm;
+                    }else{
+                        $perm = array('optact' => 1,'verifval' => 0,'verifvaltab' => 0,'contract' => false );
+                        return $perm;
+                    }
+        		}else{
+                    $perm = array('optact' => 1,'verifval' => 0,'verifvaltab' => 1,'contract' => false );
+                    return $perm;
+                }
+            }else{
+                $perm = array('optact' => 1,'verifval' => 1,'verifvaltab' => null,'contract' => false );
+                return $perm;
+            }
     	}
     	if ($this->input->post('action_option_emision')==2) {
     		$data = array('type_language' => $this->input->post('langue') );
-    		$insert = $this->db->delete('type_language', $data);
-    		if ($insert==true) {
+    		$delete = $this->db->delete('type_language', $data);
+    		if ($delete == true) {
 				$query = $this->dbforge->drop_column('language', $this->input->post('langue'));
-	    		return ($query == true) ? true : false;
-    		}
+	    		if ($query==true) {
+                    $perm = array('optact' => 2,'verifval' => 0,'verifvaltab' => 0,'contract' => true );
+                    return $perm;
+                }else{
+                    $perm = array('optact' => 2,'verifval' => 0,'verifvaltab' => 1,'contract' => false );
+                    return $perm;
+                }
+    		}else{
+                $perm = array('optact' => 2,'verifval' => 1,'verifvaltab' => null,'contract' => false );
+                return $perm;
+            }
     	}
 
 
