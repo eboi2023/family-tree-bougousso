@@ -16,17 +16,17 @@
         <!-- Left navbar links -->
         <ul id="bigfamilyNav" class="navbar-nav">
           <li class="nav-item">
-            <a href="<?php echo site_url('my_big_family.html');?>" class="nav-link">
+            <a href="<?php echo site_url('my_big_family');?>" class="nav-link">
               <?php echo get_phrase("my_big_family",4); ?>
             </a>
           </li>
           <li id="littlefamilyNav" class="nav-item">
-            <a href="<?php echo site_url('my_little_family.html');?>" class="nav-link">
+            <a href="<?php echo site_url('my_little_family');?>" class="nav-link">
               <?php echo get_phrase("my_little_family",4); ?>
             </a>
           </li>
           <li id="familyNav" class="nav-item">
-            <a href="<?php echo site_url('the_family.html');?>" class="nav-link">
+            <a href="<?php echo site_url('the_family');?>" class="nav-link">
               <?php echo get_phrase("the_family",4); ?>
             </a>
           </li>

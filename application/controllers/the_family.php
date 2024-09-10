@@ -22,13 +22,11 @@ class The_family extends Admin_Controller
 		if(!in_array('updateCompany', $this->permission)) {
             redirect('dashboard', 'refresh');
         }
-		$this->data['titre'] = get_phrase('La liste des Langue');
-		$this->data['lien'] = get_phrase('La liste des langue');
-		$this->data['icon'] = '<i class="fa fa-bomb"></i>';
+		$this->data['titre'] = 'liste family';
+		$this->data['lien'] = 'liste family';
 		$this->data['type_langue'] = $this->Langue_model->fechTypeLangueList();
 		$this->data['aff_langue'] = $this->Langue_model->aff_laguage_complet();
-		/*$this->data['info_tranlect'] = $this->translect();*/
-		$this->render_template('langue/index.php', $this->data);
+		$this->render_template('familyNav/index.php', $this->data);
 	}
 	public function update_langue()
 	{
