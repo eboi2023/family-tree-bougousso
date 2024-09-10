@@ -117,9 +117,9 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?php echo site_url('');?>"><i class="fa fa-dashboard"></i> <?php echo get_phrase('Home'); ?></a></li>
-              <li class="breadcrumb-item"><a href="<?php echo site_url();?>/Dashboard"><i class="fa fa-home"></i>&nbsp;<?php echo get_phrase('Dashboard'); ?></a></li>
-              <li class="breadcrumb-item active"><?= $icon; ?>&nbsp;<?= get_phrase($lien); ?></li>
+              <li class="breadcrumb-item"><a href="<?php echo site_url('');?>"><i class="fa fa-dashboard"></i> <?php echo get_phrase('Home',3); ?></a></li>
+              <li class="breadcrumb-item"><a href="<?php echo site_url();?>/Dashboard"><i class="fa fa-home"></i>&nbsp;<?php echo get_phrase('Dashboard',3); ?></a></li>
+              <li class="breadcrumb-item active"><?= $icon; ?>&nbsp;<?= get_phrase($lien,3); ?></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->

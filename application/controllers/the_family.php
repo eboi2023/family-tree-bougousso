@@ -22,8 +22,9 @@ class The_family extends Admin_Controller
 		if(!in_array('updateCompany', $this->permission)) {
             redirect('dashboard', 'refresh');
         }
-		$this->data['titre'] = 'liste family';
-		$this->data['lien'] = 'liste family';
+		$this->data['titre'] = 'list family';
+		$this->data['lien'] = 'list family';
+		$this->data['icon'] = '<i class="fa fa-sitemap"></i>';
 		$this->data['type_langue'] = $this->Langue_model->fechTypeLangueList();
 		$this->data['aff_langue'] = $this->Langue_model->aff_laguage_complet();
 		$this->render_template('familyNav/index.php', $this->data);
