@@ -1,6 +1,6 @@
 <?php 
 
-class The_family extends Admin_Controller 
+class My_big_family extends Admin_Controller 
 {
 	public function __construct()
 	{
@@ -8,7 +8,7 @@ class The_family extends Admin_Controller
 
 		$this->not_logged_kl_in();
 		$this->load->model('Langue_model');
-		$this->data['page_title'] = 'Listes languague';
+		$this->data['page_title'] = 'list big family';
 		$this->data['company_info'] = $this->model_company->getCompanyData(1);
 	}
 
@@ -22,12 +22,12 @@ class The_family extends Admin_Controller
 		if(!in_array('updateCompany', $this->permission)) {
             redirect('dashboard', 'refresh');
         }
-		$this->data['titre'] = 'list family';
-		$this->data['lien'] = 'list family';
+		$this->data['titre'] = 'list big family';
+		$this->data['lien'] = 'list big family';
 		$this->data['icon'] = '<i class="fa fa-sitemap"></i>';
 		$this->data['type_langue'] = $this->Langue_model->fechTypeLangueList();
 		$this->data['aff_langue'] = $this->Langue_model->aff_laguage_complet();
-		$this->render_template('familyNav/index.php', $this->data);
+		$this->render_template('my_little_family/index.php', $this->data);
 	}
 	public function update_langue()
 	{
