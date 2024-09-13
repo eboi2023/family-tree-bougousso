@@ -39,8 +39,7 @@
   <script src="<?php echo base_url('assets/plugins/datatables-buttons/js/buttons.colVis.min.js'); ?>"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="<?php echo base_url('assets/dist/js/adminlte.min.js'); ?>"></script>
-  
-  <script type="text/javascript">
+   <script type="text/javascript">
     var manageTable;
       var base_url = "<?php echo base_url(''); ?>";
 
@@ -100,6 +99,7 @@
               'ordering'    : true,
               'info'        : true,
               'autoWidth'   : false,
+              'responsive': true,
               'order': []
           });
           
@@ -128,6 +128,7 @@
 
       }); 
   </script>
+  
 <?php } ?>
 <?php if ($page_title== "list big family") {?>
   <!-- DataTables  & Plugins -->
@@ -206,6 +207,7 @@
               'ordering'    : true,
               'info'        : true,
               'autoWidth'   : false,
+              'responsive': true,
               'order': []
           });
           
@@ -313,6 +315,7 @@
               'ordering'    : true,
               'info'        : true,
               'autoWidth'   : false,
+              'responsive': true,
               'order': []
           });
           
@@ -340,6 +343,17 @@
           } );
 
       }); 
+  </script>
+<?php } ?>
+
+<?php if ($page_title== "Register a family member") {?>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $("#registerfamilymemberNav").addClass('active');
+      if (document.getElementById('action_option_emision').value =='') {}
+    });
   </script>
 <?php } ?>
 

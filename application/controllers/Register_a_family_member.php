@@ -8,7 +8,7 @@ class Register_a_family_member extends Admin_Controller
 
 		$this->not_logged_kl_in();
 		$this->load->model('Langue_model');
-		$this->data['page_title'] = 'list little family';
+		$this->data['page_title'] = 'Register a family member';
 		$this->data['company_info'] = $this->model_company->getCompanyData(1);
 	}
 
@@ -19,21 +19,16 @@ class Register_a_family_member extends Admin_Controller
 	*/
 	public function index()
 	{
-		if(!in_array('updateCompany', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
-		$this->data['titre'] = 'list little family';
-		$this->data['lien'] = 'list little family';
+		
+		$this->data['titre'] = 'Register a family member';
+		$this->data['lien'] = 'Register a family member';
 		$this->data['icon'] = '<i class="fa fa-sitemap"></i>';
-		$this->data['type_langue'] = $this->Langue_model->fechTypeLangueList();
-		$this->data['aff_langue'] = $this->Langue_model->aff_laguage_complet();
-		$this->render_template('my_little_family/index.php', $this->data);
+		$this->load->library('form_validation');
+		$this->render_template('register_a_family_member/index.php', $this->data);
 	}
 	public function update_langue()
 	{
-	  	if(!in_array('updateCompany', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
+	  	
         if ($this->Langue_model->insertLangueList()==true) {
 	  		$this->session->set_flashdata('basicInfo', get_phrase('Successfully Updated'));
 		    redirect('Langue/', 'refresh');
@@ -44,9 +39,6 @@ class Register_a_family_member extends Admin_Controller
 	  	
 	}
 	public function option(){
-		if(!in_array('updateCompany', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
         if ($this->Langue_model->Option_Langue()==true) {
 	  		$this->session->set_flashdata('basicInfo', get_phrase('Successfully created'));
 		    redirect('Langue/', 'refresh');

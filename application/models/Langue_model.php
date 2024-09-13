@@ -58,6 +58,7 @@ class Langue_model extends CI_Model
     	}
     	return true;
     }
+
     public function Option_Langue(){
     	$this->load->dbforge();
     	if ($this->input->post('action_option_emision')==1) {
@@ -126,5 +127,18 @@ class Langue_model extends CI_Model
 			$update = $this->db->update('language', $data);
     	}
     	return true;
+    }
+
+    public function delete_Langue(){
+        $sql = "SELECT * FROM language where phrase_id = ?";
+        $query = $this->db->query($sql, array($this->input->post('action_option_deleted')));
+            if ($query->num_rows() == 0) {
+                return false;
+            }else{
+                $data = array('phrase_id' => $this->input->post('action_option_deleted') );
+                $delete = $this->db->delete('language', $data);
+                $retVal = ($delete == true) ? true : false ;
+                return $retVal;
+            }
     }
 }

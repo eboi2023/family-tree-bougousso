@@ -129,5 +129,19 @@ class Langues extends Admin_Controller
 	  	}
 	}
 
+	public function deleted(){
+		$session_data = $this->session->userdata();
+		if(!in_array('updateCompany', $this->permission) || $session_data['logged_kl_in'] != TRUE) {
+            redirect('dashboard', 'refresh');
+        }
+        $tab=$this->Langue_model->delete_Langue();
+        if ($tab == false) {
+        	$this->session->set_flashdata('basicWarning', get_phrase('the_sentence_already_non_exists',3));
+		    redirect('langues', 'refresh');
+        }else{
+        	$this->session->set_flashdata('basicInfo', get_phrase('Successfully_deleted',3));
+	  		redirect('langues', 'refresh');
+        }
+	}
 	
 }

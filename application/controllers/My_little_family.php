@@ -19,9 +19,7 @@ class My_little_family extends Admin_Controller
 	*/
 	public function index()
 	{
-		if(!in_array('updateCompany', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
+		
 		$this->data['titre'] = 'list little family';
 		$this->data['lien'] = 'list little family';
 		$this->data['icon'] = '<i class="fa fa-sitemap"></i>';
@@ -31,9 +29,7 @@ class My_little_family extends Admin_Controller
 	}
 	public function update_langue()
 	{
-	  	if(!in_array('updateCompany', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
+	  	
         if ($this->Langue_model->insertLangueList()==true) {
 	  		$this->session->set_flashdata('basicInfo', get_phrase('Successfully Updated'));
 		    redirect('Langue/', 'refresh');
@@ -44,9 +40,7 @@ class My_little_family extends Admin_Controller
 	  	
 	}
 	public function option(){
-		if(!in_array('updateCompany', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
+		
         if ($this->Langue_model->Option_Langue()==true) {
 	  		$this->session->set_flashdata('basicInfo', get_phrase('Successfully created'));
 		    redirect('Langue/', 'refresh');

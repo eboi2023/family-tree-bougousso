@@ -25,11 +25,20 @@
               <?php echo get_phrase("my_little_family",4); ?>
             </a>
           </li>
-          <li id="registerfamilymemberNav" class="nav-item">
-            <a href="<?php echo site_url('register_a_family_member');?>" class="nav-link">
-              <?php echo get_phrase("register_a_family_member",4); ?>
-            </a>
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><?php echo get_phrase("register_a_family_member",4); ?></a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="#" class="dropdown-item"><?php echo get_phrase("add_brother",4); ?></a></li>
+              <li><a href="#" class="dropdown-item"><?php echo get_phrase("add sister",4); ?></a></li>
+              <li><a href="#" class="dropdown-item"><?php echo get_phrase("Add a spouse",4); ?> </a></li>
+              <li><a href="#" class="dropdown-item"><?php echo get_phrase("Add a son",4); ?></a></li>
+              <li><a href="#" class="dropdown-item"><?php echo get_phrase("Add a girl",4); ?></a></li>
+            </ul>
           </li>
+
+
+
+         
           <?php if($this->session->userdata('id')==1): ?>
             <li id="languageNav"  class="nav-item">
               <a href="<?php echo base_url('langues') ?>"  class="nav-link">
@@ -104,10 +113,7 @@
     
     <!-- Content Header (Page header) -->
     <div class="content-header">
-      <?php 
-        if ($page_title== "Listes languague") {
-         
-      ?>
+      
 
   </section>
       <div class="container">
@@ -124,6 +130,5 @@
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
-      <?php } ?>
     </div>
     <!-- /.content-header -->
