@@ -21,7 +21,7 @@
                 <?php echo form_open_multipart('langues/update_langue',array('class' => 'form-horizontal UpdateDetails'));?>
                   <div class="card-header">
                     <input type="submit" value="<?php echo get_phrase('Update_Langue',3); ?>" class="btn btn-primary pull-right">
-                    <a href="#" data-toggle="modal" data-target="#modal-create-language"  class="btn btn-primary pull-left"><?php echo get_phrase('Multi_language_action',3); ?></a>
+                    <a href="#" data-toggle="modal" data-target="#modal-create-language"  class="btn btn-primary pull-left"><?php echo get_phrase('add_or_remove_a_language',3); ?></a>
                     <a href="#" data-toggle="modal" data-target="#modal-deleted-language"  class="btn btn-danger pull-left"><?php echo get_phrase('action_deleted',3); ?></a>
                       <br /> <br />
                   </div>
@@ -34,7 +34,7 @@
                             <th><?php echo get_phrase('qualification',3);$compte=0; ?></th>
                             <?php if($type_langue){
                                 foreach($type_langue as $selectvalue){ $compte++; ?>
-                                    <th><?php $libel[$compte] = $selectvalue->type_language; echo get_phrase($libel[$compte]); ?></th>
+                                    <th><?php $libel[$compte] = $selectvalue->type_language; echo get_phrase($libel[$compte],3); ?></th>
                                 <?php } ?>
                             <?php } ?>
                         </tr>
@@ -69,8 +69,9 @@
                   </div>
                   <!-- /.card-body -->
                   <div class="card-footer">
-                    <input type="submit" value="<?php echo get_phrase('Update Langue'); ?>" class="btn btn-primary pull-right">
-                    <a href="#" data-toggle="modal" data-target="#modal-create-language"  class="btn btn-primary pull-left"><?php echo get_phrase('Multi language action'); ?></a>
+                    <input type="submit" value="<?php echo get_phrase('Update Langue',3); ?>" class="btn btn-primary pull-right">
+                    <a href="#" data-toggle="modal" data-target="#modal-create-language"  class="btn btn-primary pull-left"><?php echo get_phrase('add_or_remove_a_language',3); ?></a>
+                    <a href="#" data-toggle="modal" data-target="#modal-deleted-language"  class="btn btn-danger pull-left"><?php echo get_phrase('action_deleted',3); ?></a>
                       <br /> <br />
                   </div>
                 <?php echo form_close(); ?>
@@ -104,12 +105,12 @@
                 <?php echo form_open('langues/option') ; ?>
                     <div class="box-body">    
                         <div class="form-group">
-                          <label for="currency"><?php echo get_phrase('section action'); ?></label>
+                          <label for="currency"><?php echo get_phrase('section action',3); ?></label>
                           <?php ?>
                           <select class="form-control" id="currency" name="option_langue" onchange="selection_action()" required>
                             <option value="">~~SELECT~~</option>
-                            <option value="1"><?php echo get_phrase('Add'); ?></option>
-                            <option value="2"><?php echo get_phrase('Delecte'); ?></option>
+                            <option value="1"><?php echo get_phrase('Add',1); ?></option>
+                            <option value="2"><?php echo get_phrase('Delecte',1); ?></option>
                           </select>
                         </div>              
                         <div class="form-group" id="type_valeur">
@@ -152,10 +153,7 @@
             </div>
             <div class="modal-body box box-danger"> 
                         <?php 
-                  $attributes = array("class" => "",
-                                      "id" => "",
-                                      "name" => "",
-                                      "oninput" => "return selection_action_delete(this)");
+                  $attributes = array("oninput" => "return selection_action_delete(this)");
                   echo form_open("langues/deleted", $attributes);
                 ?>
                     <div class="box-body"> 
@@ -192,19 +190,19 @@
           document.getElementById('type_valeur').innerHTML='';
         }else{
           if (valeur==1) {
-            document.getElementById('type_valeur').innerHTML='<label for="add_langue"><?php echo get_phrase('section langue'); ?></label><input class="form-control" type="text" name="add_langue" id="add_langue" placeholder="<?php echo get_phrase('enter in the name language'); ?>" required>';
+            document.getElementById('type_valeur').innerHTML='<label for="add_langue"><?php echo get_phrase('section langue',3); ?></label><input class="form-control" type="text" name="add_langue" id="add_langue" placeholder="<?php echo get_phrase('enter in the name language',3); ?>" required>';
             
             document.getElementById('action_option_emision').value=1;
-            document.getElementById('valider3').value='<?php echo get_phrase("create");?>';
+            document.getElementById('valider3').value='<?php echo get_phrase("create",3);?>';
           }
           if (valeur==2) {
-            document.getElementById('type_valeur').innerHTML='<label for="langue"><?php echo get_phrase('section langue'); ?></label><?php ?><select class="form-control" id="langue" name="langue" required><option value="">~~SELECT~~</option><?php if($type_langue){
+            document.getElementById('type_valeur').innerHTML='<label for="langue"><?php echo get_phrase('section langue',3); ?></label><?php ?><select class="form-control" id="langue" name="langue" required><option value="">~~SELECT~~</option><?php if($type_langue){
                                 foreach($type_langue as $selectvalue){$libel=$selectvalue->type_language;$id_langue=$selectvalue->id; 
                                   if ($id_langue==1 || $id_langue==2) {}else{?>
-                                  <option value="<?=$libel?>" <?php if('aaa' == $libel) {echo "selected";} ?>><?php echo get_phrase($libel);?></option><?php }} ?>
+                                  <option value="<?=$libel?>" <?php if('aaa' == $libel) {echo "selected";} ?>><?php echo get_phrase($libel,3);?></option><?php }} ?>
                               <?php } ?></select>';
             document.getElementById('action_option_emision').value=2;
-            document.getElementById('valider3').value='<?php echo get_phrase("deleted");?>';
+            document.getElementById('valider3').value='<?php echo get_phrase("deleted",3);?>';
 
           }
         }

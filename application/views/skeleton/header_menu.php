@@ -28,11 +28,12 @@
           <li class="nav-item dropdown">
             <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><?php echo get_phrase("register_a_family_member",4); ?></a>
             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-              <li><a href="#" class="dropdown-item"><?php echo get_phrase("add_brother",4); ?></a></li>
-              <li><a href="#" class="dropdown-item"><?php echo get_phrase("add sister",4); ?></a></li>
-              <li><a href="#" class="dropdown-item"><?php echo get_phrase("Add a spouse",4); ?> </a></li>
-              <li><a href="#" class="dropdown-item"><?php echo get_phrase("Add a son",4); ?></a></li>
-              <li><a href="#" class="dropdown-item"><?php echo get_phrase("Add a girl",4); ?></a></li>
+              <li><a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-add-brother"><?php echo get_phrase("add_brother",4); ?></a></li>
+              <li><a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-add-sister"><?php echo get_phrase("add_sister",4); ?></a></li>
+              <li><a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-add-spouse"><?php echo get_phrase("Add_a_spouse",4); ?> </a></li>
+              <li><a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-add-son"><?php echo get_phrase("Add_a_son",4); ?></a></li>
+              <li><a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-add-girl"><?php echo get_phrase("Add_a_girl",4); ?></a></li>
+              <li><a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-add-other-person"><?php echo get_phrase("other_person",4); ?></a></li>
             </ul>
           </li>
 

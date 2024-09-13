@@ -43,16 +43,16 @@ if ( ! function_exists('get_phrase'))
 				return $row->$current_language;	
 			}
 			if ($typephrase==1) {# All caps
-				return strtoupper($row->$current_language);	
+				return mb_strtoupper($row->$current_language, 'UTF-8');
 			}
 			if ($typephrase==2) {# All in lower case
-				return strtolower($row->$current_language);	
+				return mb_strtolower($row->$current_language, 'UTF-8');	
 			}
 			if ($typephrase==3) {# First letter in capitals
-				return ucfirst($row->$current_language);	
+				return ucfirst(mb_strtoupper($row->$current_language, 'UTF-8'));	
 			}
 			if ($typephrase==4) {# All first letters in capitals
-				return ucwords($row->$current_language);	
+				return ucwords(mb_strtoupper($row->$current_language, 'UTF-8'));	
 			}
 			
 			
