@@ -121,7 +121,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">><?php echo get_phrase("éAdd_other_person",4); ?></h4>
+        <h4 class="modal-title"><?php echo get_phrase("Add_other_person",4); ?></h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

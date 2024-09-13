@@ -49,10 +49,10 @@ if ( ! function_exists('get_phrase'))
 				return mb_strtolower($row->$current_language, 'UTF-8');	
 			}
 			if ($typephrase==3) {# First letter in capitals
-				return ucfirst(mb_strtoupper($row->$current_language, 'UTF-8'));	
+				return ucfirst($row->$current_language);	
 			}
 			if ($typephrase==4) {# All first letters in capitals
-				return ucwords(mb_strtoupper($row->$current_language, 'UTF-8'));	
+				return ucwords($row->$current_language);	
 			}
 			
 			
@@ -62,10 +62,10 @@ if ( ! function_exists('get_phrase'))
 				return str_replace('_',' ',$phrase);
 			}
 			if ($typephrase==1) {# All caps
-				return strtoupper(str_replace('_',' ',$phrase));
+				return mb_strtoupper(str_replace('_',' ',$phrase), 'UTF-8');
 			}
 			if ($typephrase==2) {# All in lower case
-				return strtolower(str_replace('_',' ',$phrase));
+				return mb_strtolower(str_replace('_',' ',$phrase), 'UTF-8');
 			}
 			if ($typephrase==3) {# First letter in capitals
 				return ucfirst(str_replace('_',' ',$phrase));
@@ -74,6 +74,8 @@ if ( ! function_exists('get_phrase'))
 				return ucwords(str_replace('_',' ',$phrase));
 			}
 	}
+
+	
 }
 
 // ------------------------------------------------------------------------

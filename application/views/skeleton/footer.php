@@ -94,7 +94,7 @@
               },
               
               'paging'      : true,
-              'lengthChange': true,
+              'lengthChange': false,
               'searching'   : true,
               'ordering'    : true,
               'info'        : true,
