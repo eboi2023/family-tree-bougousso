@@ -25,7 +25,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="<?php echo base_url('assets/page/free/produitkss.js'); ?>"></script>
     <link href="<?php echo base_url('assets/page/free/produitkss.css'); ?>" rel="stylesheet" />
   <?php } ?>
-  <?php if ($page_title== "Listes languague") {?>
+  <?php if ($page_title== "tree little family" || $page_title== "tree big family") {?>
+    <script src="<?php echo base_url('assets/page/free/produitkss.js'); ?>"></script>
+    <link href="<?php echo base_url('assets/page/free/produitkss.css'); ?>" rel="stylesheet" />
+  <?php } ?>
+  <?php if ($page_title== "Listes languague" || $page_title== "list big family" || $page_title== "list little family") {?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?php echo base_url('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css'); ?>">

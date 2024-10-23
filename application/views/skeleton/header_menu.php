@@ -15,21 +15,45 @@
       <div class="collapse navbar-collapse order-3" id="navbarCollapse">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
-          <li id="bigfamilyNav" class="nav-item">
-            <a href="<?php echo site_url('my_big_family');?>" class="nav-link">
-              <?php echo get_phrase("my_big_family",4); ?>
+          <li id="bigfamilyNav" class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <?php echo get_phrase("my_big_family",3); ?>
             </a>
-          </li>
-          <li id="littlefamilyNav" class="nav-item">
-            <a href="<?php echo site_url('my_little_family');?>" class="nav-link">
-              <?php echo get_phrase("my_little_family",4); ?>
-            </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><?php echo get_phrase("register_a_family_member",4); ?></a>
             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-              <li><a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-add-brother"><?php echo get_phrase("add_brother",4); ?></a></li>
-              <li><a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-add-sister"><?php echo get_phrase("add_sister",4); ?></a></li>
+              <li>
+                <a href="<?php echo site_url('my_big_family/list');?>" id="bigfamilyList" class="dropdown-item">
+                  <?php echo get_phrase("view_list",3); ?>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo site_url('my_big_family/tree');?>" id="bigfamilyTree" class="dropdown-item" >
+                  <?php echo get_phrase("the_tree",3); ?>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li id="littlefamilyNav" class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <?php echo get_phrase("my_little_family",3); ?>
+            </a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li>
+                <a href="<?php echo site_url('my_little_family/list');?>" id="littlefamilyList" class="dropdown-item">
+                  <?php echo get_phrase("view_list",3); ?>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo site_url('my_little_family/tree');?>" id="littlefamilyTree" class="dropdown-item">
+                  <?php echo get_phrase("the_tree",3); ?>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li id="dropdownSubMenu1" class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo get_phrase("register_a_family_member",4); ?></a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-add-parents"><?php echo get_phrase("add_parents",4); ?></a></li>
+              <li><a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-add-brothers"><?php echo get_phrase("add_sister_or_brother",4); ?></a></li>
               <li><a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-add-spouse"><?php echo get_phrase("Add_a_spouse",4); ?> </a></li>
               <li><a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-add-son"><?php echo get_phrase("Add_a_son",4); ?></a></li>
               <li><a href="#" class="dropdown-item" data-toggle="modal" data-target="#modal-add-girl"><?php echo get_phrase("Add_a_girl",4); ?></a></li>
@@ -124,7 +148,6 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?php echo site_url('');?>"><i class="fa fa-dashboard"></i> <?php echo get_phrase('Home',3); ?></a></li>
               <li class="breadcrumb-item"><a href="<?php echo site_url();?>/Dashboard"><i class="fa fa-home"></i>&nbsp;<?php echo get_phrase('Dashboard',3); ?></a></li>
               <li class="breadcrumb-item active"><?= $icon; ?>&nbsp;<?= get_phrase($lien,3); ?></li>
             </ol>

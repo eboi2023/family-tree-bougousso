@@ -153,6 +153,8 @@
 
       $(document).ready(function() {
         $("#bigfamilyNav").addClass('active');
+        $("#bigfamilyList").addClass('active');
+        
           // initialize the datatable 
           manageTable = $('#manageTable').DataTable({
               "language": {
@@ -237,7 +239,12 @@
       }); 
   </script>
 <?php } ?>
-
+<?php if ($page_title== "tree big family") {?>
+  <script type="text/javascript">
+    $("#bigfamilyNav").addClass('active');
+    $("#bigfamilyTree").addClass('active');
+  </script>
+<?php } ?>
 <?php if ($page_title== "list little family") {?>
   <!-- DataTables  & Plugins -->
   <script src="<?php echo base_url('assets/plugins/datatables/jquery.dataTables.min.js'); ?>"></script>
@@ -261,6 +268,7 @@
 
       $(document).ready(function() {
         $("#littlefamilyNav").addClass('active');
+        $("#littlefamilyList").addClass('active');
           // initialize the datatable 
           manageTable = $('#manageTable').DataTable({
               "language": {
@@ -345,7 +353,12 @@
       }); 
   </script>
 <?php } ?>
-
+<?php if ($page_title== "tree little family") {?>
+  <script type="text/javascript">
+    $("#littlefamilyNav").addClass('active');
+    $("#littlefamilyTree").addClass('active');
+  </script>
+<?php } ?>
 <?php if ($page_title== "Register a family member") {?>
 
   <script type="text/javascript">
@@ -354,6 +367,9 @@
       $("#registerfamilymemberNav").addClass('active');
       if (document.getElementById('action_option_emision').value =='') {}
     });
+    function tracefrise(){
+      
+    }
   </script>
 <?php } ?>
 

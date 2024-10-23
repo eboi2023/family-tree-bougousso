@@ -18,6 +18,17 @@ class Personne_model extends CI_Model
      }
   }
 
+  public function Aff_personne1(){  
+    $this->db->select('');
+    $this->db->from('teste');
+    $query = $this->db->get();
+    if ($query->num_rows() > 0 ) {
+       return $query->result();
+     } else {
+       return false;
+     }
+  }
+
   public function verif_personne($data)
   {  
     $this->db->select();
